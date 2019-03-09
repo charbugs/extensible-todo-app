@@ -7,7 +7,7 @@ import { storePlugins } from './extend';
 import App from './components/App';
 
 
-export default function (id, plugins) {
+function init (id, plugins) {
 
   storePlugins(plugins);
   const store = createStore(plugins || []);
@@ -20,4 +20,10 @@ export default function (id, plugins) {
   );
 
   return store;
+}
+
+const greed = 'hello implementer';
+
+export default {
+  init, greed
 }
