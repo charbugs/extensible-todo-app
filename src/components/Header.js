@@ -18,7 +18,7 @@ const PluginHook = props => {
   return null;
 }
 
-const Header = props => (
+export const Header = props => (
   <AppBar position="static">
     <Toolbar>
       <Grid container spacing={24} justify="flex-end">

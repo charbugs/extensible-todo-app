@@ -1,10 +1,9 @@
 
-let pluginStore = [];
-
-export function storePlugins(plugins) {
-  pluginStore = plugins || [];
-}
-
-export function getPlugins() {
-  return pluginStore;
+export const pluginStore = {
+  storePlugins(plugins) {
+    this.plugins = plugins;
+  },
+  getPlugins() {
+    return this.plugins;
+  }
 }

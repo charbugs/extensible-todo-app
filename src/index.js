@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import createStore from './state/store';
-import { storePlugins } from './extend';
+import { pluginStore } from './extend';
 import App from './components/App';
+
+import * as components from './components';
+import * as actions from './state/actions';
 
 
 function init (id, plugins) {
 
-  storePlugins(plugins);
+  pluginStore.storePlugins(plugins);
   const store = createStore(plugins || []);
 
   ReactDOM.render(
@@ -22,8 +25,4 @@ function init (id, plugins) {
   return store;
 }
 
-const greed = 'hello implementer';
-
-export default {
-  init, greed
-}
+export default { init, components, actions }

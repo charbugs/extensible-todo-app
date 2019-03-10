@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { getPlugins } from '.';
+import { connect } from 'react-redux';
+import { pluginStore } from '.';
 
 // withPlugins must be the innermost HOC to match the name of the target component
 export function withPlugins(TargetComponent) {
   return class extends Component {
     render() {
 
-      const plugin = getPlugins().find(plugin => plugin.target === TargetComponent.name);
+      const plugin = pluginStore.getPlugins().find(plugin => plugin.target === TargetComponent);
 
       if (!plugin) {
         return <TargetComponent { ...this.props } />
@@ -15,11 +16,17 @@ export function withPlugins(TargetComponent) {
         return null;
       }
       else if (plugin.modus === 'replace') {
-        return React.createElement(plugin.component, { ...this.props });
+        const PluginComponent = connectPluginComponent(plugin);
+        return <PluginComponent { ...this.props } />
       }
       else if (plugin.modus === 'add') {
-        return <TargetComponent {...this.props} PluginComponent={plugin.component} />
+        const PluginComponent = connectPluginComponent(plugin);
+        return <TargetComponent {...this.props} PluginComponent={PluginComponent} />
       }
     }
   }
+}
+
+function connectPluginComponent(plugin) {
+  return connect(plugin.mapStateToProps, plugin.mapDispatchToProps)(plugin.component);
 }

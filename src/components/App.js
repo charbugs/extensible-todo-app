@@ -17,7 +17,7 @@ const PluginHook = props => {
   return null;
 }
 
-const App = props => (
+export const App = props => (
   <Grid container direction="column" spacing={24}>
     <Grid item>
       <Header />

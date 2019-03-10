@@ -12,7 +12,7 @@ import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 import { connect } from 'react-redux';
 import * as actions from '../state/actions';
 
-const TodoTable = props => (
+export const TodoTable = props => (
   <Paper style={{ padding: "24px 24px" }}>
     <Table>
       <TableHead>

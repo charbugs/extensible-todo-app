@@ -31,7 +31,7 @@ Higher Actions
 ***************************************/
 
 export const addTodoItem = (user, text, date) => (dispatch, getState) => {
-  const todoId = dispatch(createTodo({ user, text, date: date.toLocaleTimeString() })).id;
+  const todoId = dispatch(createTodo({ user, text, date: date })).id;
   dispatch(updateTodoFilter([ ...getState().todoFilter, todoId ]));
 }
 

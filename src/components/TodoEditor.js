@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import * as actions from '../state/actions';
 
 
-class TodoEditor extends React.Component {
+export class TodoEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +34,7 @@ class TodoEditor extends React.Component {
     this.props.addTodoItem(
       this.state.user,
       this.state.text,
-      new Date()
+      new Date().toLocaleTimeString(),
     );
   }
 

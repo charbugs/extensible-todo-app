@@ -9,7 +9,7 @@ import * as actions from '../state/actions';
 import { withPlugins } from '../extend';
 
 
-const TodoFilters = props => (
+export const TodoFilters = props => (
   <Paper style={{ padding: "24px 24px" }}>
     <Grid container direction="column" spacing={24}>
       <Grid item>
