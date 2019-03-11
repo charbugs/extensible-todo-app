@@ -1,4 +1,5 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   mode: 'production',
@@ -10,7 +11,8 @@ module.exports = {
     library: 'ExtensibleTodoApp',
     libraryExport: 'default'
   },
-  devtool: 'inline-source-map',
+  //devtool: 'inline-source-map',
+  plugins: [ new BundleAnalyzerPlugin() ],
   module: {
     rules: [
       {
