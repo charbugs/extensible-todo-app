@@ -37,4 +37,4 @@ export const App = props => (
   </Grid>
 );
 
-export default withPlugins(App);
+export default withPlugins(App, 'App');

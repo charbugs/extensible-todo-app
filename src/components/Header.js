@@ -37,4 +37,4 @@ export const Header = props => (
   </AppBar>
 );
 
-export default withPlugins(Header);
+export default withPlugins(Header, 'Header');

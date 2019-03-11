@@ -3,11 +3,15 @@ import { connect } from 'react-redux';
 import { pluginStore } from '.';
 
 // withPlugins must be the innermost HOC to match the name of the target component
-export function withPlugins(TargetComponent) {
+export function withPlugins(TargetComponent, targetName) {
   return class extends Component {
     render() {
 
-      const plugin = pluginStore.getPlugins().find(plugin => plugin.target === TargetComponent);
+      console.log('eta: withPlugins: getPlugins():', pluginStore.getPlugins());
+      console.log('eta: withPlugins: TargetComponent.name:', TargetComponent.name);
+      const plugin = pluginStore.getPlugins().find(plugin => plugin.target === targetName);
+
+      console.log('eta: withPlugins: found plugin:', plugin);
 
       if (!plugin) {
         return <TargetComponent { ...this.props } />

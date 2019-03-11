@@ -5,9 +5,9 @@ import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-
 import { connect } from 'react-redux';
 import * as actions from '../state/actions';
+import { withPlugins } from '../extend';
 
 
 export class TodoEditor extends React.Component {
@@ -68,4 +68,4 @@ const mapDispatchToProps = {
   addTodoItem: actions.addTodoItem
 }
 
-export default connect(null, mapDispatchToProps)(TodoEditor);
+export default connect(null, mapDispatchToProps)(withPlugins(TodoEditor, 'TodoEditor'));

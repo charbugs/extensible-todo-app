@@ -8,9 +8,9 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/DeleteOutlined';
-
 import { connect } from 'react-redux';
 import * as actions from '../state/actions';
+import { withPlugins } from '../extend';
 
 export const TodoTable = props => (
   <Paper style={{ padding: "24px 24px" }}>
@@ -49,4 +49,4 @@ const mapDispatchToProps = {
   trashTodo: actions.trashTodo,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoTable);
+export default connect(mapStateToProps, mapDispatchToProps)(withPlugins(TodoTable, 'TodoTable'));

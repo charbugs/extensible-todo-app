@@ -43,4 +43,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 // withPlugins must be the innermost HOC to match the name of the target component
-export default connect(null, mapDispatchToProps)(withPlugins(TodoFilters));
+export default connect(null, mapDispatchToProps)(withPlugins(TodoFilters, 'TodoFilters'));

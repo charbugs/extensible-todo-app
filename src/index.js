@@ -5,13 +5,11 @@ import { Provider } from 'react-redux';
 import createStore from './state/store';
 import { pluginStore } from './extend';
 import App from './components/App';
-
-import * as components from './components';
 import * as actions from './state/actions';
 
 
 function init (id, plugins) {
-
+  console.log('eta: index: plugins:', plugins);
   pluginStore.storePlugins(plugins);
   const store = createStore(plugins || []);
 
@@ -25,4 +23,4 @@ function init (id, plugins) {
   return store;
 }
 
-export default { init, components, actions }
+export default { init, actions }
