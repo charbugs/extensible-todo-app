@@ -33,6 +33,7 @@ Higher Actions
 export const addTodoItem = (user, text, date) => (dispatch, getState) => {
   const todoId = dispatch(createTodo({ user, text, date: date })).id;
   dispatch(updateTodoFilter([ ...getState().todoFilter, todoId ]));
+  dispatch(events.todoAdded(todoId));
 }
 
 export const filterTodosByRegex = (field, regex) => (dispatch, getState) => {

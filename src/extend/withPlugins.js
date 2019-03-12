@@ -7,11 +7,7 @@ export function withPlugins(TargetComponent, targetName) {
   return class extends Component {
     render() {
 
-      console.log('eta: withPlugins: getPlugins():', pluginStore.getPlugins());
-      console.log('eta: withPlugins: TargetComponent.name:', TargetComponent.name);
       const plugin = pluginStore.getPlugins().find(plugin => plugin.target === targetName);
-
-      console.log('eta: withPlugins: found plugin:', plugin);
 
       if (!plugin) {
         return <TargetComponent { ...this.props } />

@@ -6,10 +6,10 @@ import createStore from './state/store';
 import { pluginStore } from './extend';
 import App from './components/App';
 import * as actions from './state/actions';
+import * as selectors from './state/selectors';
 
 
 function init (id, plugins) {
-  console.log('eta: index: plugins:', plugins);
   pluginStore.storePlugins(plugins);
   const store = createStore(plugins || []);
 
@@ -23,4 +23,4 @@ function init (id, plugins) {
   return store;
 }
 
-export default { init, actions }
+export default { init, actions, selectors };
