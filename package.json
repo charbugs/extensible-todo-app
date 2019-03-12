@@ -1,6 +1,6 @@
 {
   "name": "@charbugs/extensible-todo-app",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Experiment for extensible React/Redux application",
   "main": "dist/main.js",
   "files": [
