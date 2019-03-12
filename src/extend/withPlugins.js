@@ -23,6 +23,10 @@ export function withPlugins(TargetComponent, targetName) {
         const PluginComponent = connectPluginComponent(plugin);
         return <TargetComponent {...this.props} PluginComponent={PluginComponent} />
       }
+      else if (plugin.modus === 'wrap') {
+        const PluginComponent = connectPluginComponent(plugin);
+        return <PluginComponent { ...this.props } TargetComponent={TargetComponent} />
+      }
     }
   }
 }

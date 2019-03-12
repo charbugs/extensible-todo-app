@@ -24,12 +24,12 @@ export const TodoFilters = props => (
       </Grid>
       <Grid item>
         <Button color="primary" onClick={props.showRigby}>
-          Rigby's
+          Rigbys
         </Button>
       </Grid>
       <Grid item>
         <Button color="primary" onClick={props.showMordacai} >
-          Mordecai's
+          Mordecais
         </Button>
       </Grid>
     </Grid>
